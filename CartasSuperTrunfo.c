@@ -13,8 +13,12 @@ int main() {
     int populacao_1, populacao_2;
     //Área em km²
     float area_1, area_2;
+    //Densidade populacional
+    float dens_pop_1, dens_pop_2;
     //PIB
     float pib_1, pib_2;
+    //PIB per capita
+    float pib_per_capita_1, pib_per_capita_2;
     //Número de pontos turísticos
     int num_pontos_turisticos_1, num_pontos_turisticos_2;
 
@@ -68,9 +72,17 @@ int main() {
     printf("Código da carta: %s\n", cod_carta_1);
     printf("Nome da cidade: %s\n", nome_cidade_1);
     printf("População: %d\n", populacao_1);
-    printf("Área: %.2f\n", area_1); //%.2f para limitar em 2 casas após a vírgula
-    printf("PIB: %.2f\n", pib_1);
+    printf("Área: %.2f km²\n", area_1); //%.2f para limitar em 2 casas após a vírgula
+    printf("PIB: R$ %.2f bilhões\n", pib_1);
     printf("Nº. de pontos turísticos: %d\n", num_pontos_turisticos_1);
+    
+    //Cálculo de densidade populacional e pib per capita. Casting em populacao_1 para conversão explícita de inteiro em float
+    dens_pop_1 = (float) populacao_1 / area_1;
+    pib_1 *= 1000000000; //Conversão para bilhões, para cálculo per capita
+    pib_per_capita_1 = pib_1 / (float) populacao_1;
+
+    printf("Densidade Populacional: %.2f hab/km²\n", dens_pop_1);
+    printf("PIB per Capita: R$ %.2f\n", pib_per_capita_1);
 
     //Exibindo segunda carta
     printf("\n"); //Para pular uma linha entre primeira e segunda carta
@@ -79,9 +91,17 @@ int main() {
     printf("Código da carta: %s\n", cod_carta_2);
     printf("Nome da cidade: %s\n", nome_cidade_2);
     printf("População: %d\n", populacao_2);
-    printf("Área: %.2f\n", area_2); //%.2f para limitar em 2 casas após a vírgula
-    printf("PIB: %.2f\n", pib_2);
+    printf("Área: %.2f km²\n", area_2); //%.2f para limitar em 2 casas após a vírgula
+    printf("PIB: R$ %.2f bilhões\n", pib_2);
     printf("Nº. de pontos turísticos: %d\n", num_pontos_turisticos_2);
+    
+    //Cálculo de densidade populacional e pib per capita. Casting em populacao_2 para conversão explícita de inteiro em float
+    dens_pop_2 = (float) populacao_2 / area_2;
+    pib_2 *= 1000000000; //Conversão para bilhões, para cálculo per capita
+    pib_per_capita_2 = pib_2 / (float) populacao_2;
+    
+    printf("Densidade Populacional: %.2f hab/km²\n", dens_pop_2);
+    printf("PIB per Capita: R$ %.2f", pib_per_capita_2);
 
     return 0;
 }
