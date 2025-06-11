@@ -21,6 +21,7 @@ int main() {
     float pib_per_capita_1, pib_per_capita_2;
     //Número de pontos turísticos
     int num_pontos_turisticos_1, num_pontos_turisticos_2;
+    double super_poder_1, super_poder_2;
 
     // Cadastro das Cartas:
     // Sugestão: Utilize a função scanf para capturar as entradas do usuário para cada atributo.
@@ -84,6 +85,10 @@ int main() {
     printf("Densidade Populacional: %.2f hab/km²\n", dens_pop_1);
     printf("PIB per Capita: R$ %.2f\n", pib_per_capita_1);
 
+    //Cálculo do Super Poder
+    super_poder_1 = (float)populacao_1 + area_1 + pib_1 + num_pontos_turisticos_1 + pib_per_capita_1 + (1/dens_pop_1);
+    printf("Super Poder: %.2f\n", super_poder_1);
+
     //Exibindo segunda carta
     printf("\n"); //Para pular uma linha entre primeira e segunda carta
     printf("SEGUNDA CARTA\n");
@@ -101,7 +106,24 @@ int main() {
     pib_per_capita_2 = pib_2 / (float) populacao_2;
     
     printf("Densidade Populacional: %.2f hab/km²\n", dens_pop_2);
-    printf("PIB per Capita: R$ %.2f", pib_per_capita_2);
+    printf("PIB per Capita: R$ %.2f\n", pib_per_capita_2);
+
+    //Cálculo do Super Poder
+    super_poder_2 = (float)populacao_2 + area_2 + pib_2 + num_pontos_turisticos_2 + pib_per_capita_2 + (1/dens_pop_2);
+    printf("Super Poder: %.2f\n", super_poder_2);
+
+    printf("\n");//para dar um espaço entre as linhas
+    printf("###QUEM VENCEU?###\n");
+    printf("Para cada categoria abaixo, se o resultado foi 1, quem venceu foi a carta 1. Se o resultado for 0, quem venceu foi a carta 2.\n");
+    printf("\n"); //para dar um espaço entre as regras e os resultados
+    printf("População: %d\n", populacao_1 > populacao_2);
+    printf("Área: %d\n", area_1 > area_2);
+    printf("PIB: %d\n", pib_1 > pib_2);
+    printf("Pontos turísticos: %d\n", num_pontos_turisticos_1 > num_pontos_turisticos_2);
+    printf("Densidade populacional, %d\n", dens_pop_1 < dens_pop_2);
+    printf("PIB per Capita: %d\n", pib_per_capita_1 > pib_per_capita_2);
+    printf("Super Poder: %d\n", super_poder_1 > super_poder_2);
+    printf("Bom jogo!");
 
     return 0;
 }
