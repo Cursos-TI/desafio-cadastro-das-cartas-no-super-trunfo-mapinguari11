@@ -86,8 +86,8 @@ int main() {
     printf("PIB per Capita: R$ %.2f\n", pib_per_capita_1);
 
     //Cálculo do Super Poder
-    super_poder_1 = (float)populacao_1 + area_1 + pib_1 + num_pontos_turisticos_1 + pib_per_capita_1 + (1/dens_pop_1);
-    printf("Super Poder: %.2f\n", super_poder_1);
+    super_poder_1 = (float)populacao_1 + area_1 + (pib_1/1000000000) + num_pontos_turisticos_1 + pib_per_capita_1 + (1/dens_pop_1);
+    printf("Super Poder: %.2f\n", super_poder_1); //divisão de pib por 1000000000 para retornar ao valor original de pib_1
 
     //Exibindo segunda carta
     printf("\n"); //Para pular uma linha entre primeira e segunda carta
@@ -109,8 +109,8 @@ int main() {
     printf("PIB per Capita: R$ %.2f\n", pib_per_capita_2);
 
     //Cálculo do Super Poder
-    super_poder_2 = (float)populacao_2 + area_2 + pib_2 + num_pontos_turisticos_2 + pib_per_capita_2 + (1/dens_pop_2);
-    printf("Super Poder: %.2f\n", super_poder_2);
+    super_poder_2 = (float)populacao_2 + area_2 + (pib_2/1000000000) + num_pontos_turisticos_2 + pib_per_capita_2 + (1/dens_pop_2);
+    printf("Super Poder: %.2f\n", super_poder_2); //divisão de pib por 1000000000 para retornar ao valor original de pib_1
 
     printf("\n");//para dar um espaço entre as linhas
     printf("###QUEM VENCEU?###\n");
